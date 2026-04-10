@@ -27,4 +27,64 @@
 
 <script src="script.js"></script>
 </body>
+  <script>
+
+const dict = {
+ru: {
+name: "МУСИН ИСА",
+subtitle: "ВЕБ РАЗРАБОТЧИК • JAVA РАЗРАБОТЧИК • СОЗДАТЕЛЬ ИГРЫ",
+
+about_title: "ОБО МНЕ",
+about_text:
+"Я профессиональный Full Stack разработчик. Создаю сайты, приложения и интерактивные проекты. Люблю чистый код и современные технологии.",
+
+skills: "НАВЫКИ",
+projects: "ПРОЕКТЫ",
+contact: "КОНТАКТЫ"
+},
+
+en: {
+name: "MUSIN ISA",
+subtitle: "WEB DEVELOPER • JAVA DEVELOPER • GAME CREATOR",
+
+about_title: "ABOUT ME",
+about_text:
+"I am a professional Full Stack developer. I create websites, applications and interactive projects. I love clean code and modern technologies.",
+
+skills: "SKILLS",
+projects: "PROJECTS",
+contact: "CONTACT"
+}
+};
+
+let lang = localStorage.getItem("lang") || "en";
+
+function setLang(l){
+lang = l;
+localStorage.setItem("lang", l);
+
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key = el.getAttribute("data-i18n");
+if(dict[l][key]) el.textContent = dict[l][key];
+});
+}
+
+// переключатель
+const switcher = document.getElementById("langSwitch");
+
+if(switcher){
+switcher.checked = (lang === "en");
+
+switcher.addEventListener("change", () => {
+setLang(switcher.checked ? "en" : "ru");
+});
+}
+
+// запуск при загрузке
+window.addEventListener("DOMContentLoaded", () => {
+setLang(lang);
+});
+
+</script>
+
 </html>
