@@ -14,7 +14,6 @@
 <!-- LANGUAGE SWITCH -->
 <div class="language-toggle">
 <input type="checkbox" id="langSwitch">
-
 <label for="langSwitch" class="switch">
 <span class="lang ru">RU</span>
 <span class="lang en">EN</span>
@@ -23,35 +22,18 @@
 
 <div class="center">
 
-<h1 class="neon reveal"
-data-ru="MUSIN ISA"
-data-en="MUSIN ISA">
-MUSIN ISA
-</h1>
+<h1 class="neon reveal" data-i18n="name">MUSIN ISA</h1>
 
-<p class="subtitle2 reveal"
-data-ru="ВЕБ РАЗРАБОТЧИК • JAVA РАЗРАБОТЧИК • СОЗДАТЕЛЬ ИГР"
-data-en="WEB DEVELOPER • JAVA DEVELOPER • GAME CREATOR">
+<p class="subtitle2 reveal" data-i18n="subtitle">
 WEB DEVELOPER • JAVA DEVELOPER • GAME CREATOR
 </p>
 
 <div class="buttons reveal">
 
-<a href="about.html"
-data-ru="ОБО МНЕ"
-data-en="ABOUT">ABOUT</a>
-
-<a href="skills.html"
-data-ru="НАВЫКИ"
-data-en="SKILLS">SKILLS</a>
-
-<a href="projects.html"
-data-ru="ПРОЕКТЫ"
-data-en="PROJECTS">PROJECTS</a>
-
-<a href="contact.html"
-data-ru="КОНТАКТЫ"
-data-en="CONTACT">CONTACT</a>
+<a href="about.html" data-i18n="about">ABOUT</a>
+<a href="skills.html" data-i18n="skills">SKILLS</a>
+<a href="projects.html" data-i18n="projects">PROJECTS</a>
+<a href="contact.html" data-i18n="contact">CONTACT</a>
 
 </div>
 
@@ -60,7 +42,8 @@ data-en="CONTACT">CONTACT</a>
 <div class="cursor"></div>
 
 <script>
-// курсор
+
+// ===== CURSOR =====
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", (e) => {
@@ -68,14 +51,14 @@ cursor.style.left = e.clientX + "px";
 cursor.style.top = e.clientY + "px";
 });
 
-// фон движение
+// ===== BACKGROUND MOVE =====
 document.addEventListener("mousemove", (e) => {
 const bg = document.querySelector(".bg");
 bg.style.transform =
 `translate(${e.clientX * 0.02}px, ${e.clientY * 0.02}px)`;
 });
 
-// анимация появления
+// ===== ANIMATION =====
 window.onload = () => {
 document.querySelectorAll(".reveal").forEach((el, i) => {
 setTimeout(() => {
@@ -85,18 +68,42 @@ el.style.transform = "translateY(0)";
 });
 };
 
-// ПЕРЕКЛЮЧЕНИЕ ЯЗЫКА
+// ===== TRANSLATION SYSTEM =====
+const dict = {
+ru: {
+name: "МУСИН ИСА",
+subtitle: "ВЕБ РАЗРАБОТЧИК • JAVA РАЗРАБОТЧИК • СОЗДАТЕЛЬ ИГР",
+about: "ОБО МНЕ",
+skills: "НАВЫКИ",
+projects: "ПРОЕКТЫ",
+contact: "КОНТАКТЫ"
+},
+
+en: {
+name: "MUSIN ISA",
+subtitle: "WEB DEVELOPER • JAVA DEVELOPER • GAME CREATOR",
+about: "ABOUT",
+skills: "SKILLS",
+projects: "PROJECTS",
+contact: "CONTACT"
+}
+};
+
 const switcher = document.getElementById("langSwitch");
 
+function setLang(lang){
+document.querySelectorAll("[data-i18n]").forEach(el=>{
+const key = el.getAttribute("data-i18n");
+el.textContent = dict[lang][key];
+});
+}
+
 switcher.addEventListener("change", () => {
-
-const lang = switcher.checked ? "en" : "ru";
-
-document.querySelectorAll("[data-ru]").forEach(el => {
-el.textContent = el.getAttribute("data-" + lang);
+setLang(switcher.checked ? "en" : "ru");
 });
 
-});
+// default language
+setLang("en");
 
 </script>
 
