@@ -51,6 +51,38 @@ window.onload = () => {
 </script>
 
 </body>
+  <div class="language-toggle">
+
+<input type="checkbox" id="langSwitch">
+
+<label for="langSwitch" class="switch">
+
+<span class="lang ru">RU</span>
+
+<span class="lang en">EN</span>
+
+</label>
+
+</div>
+
+
+<script>
+
+const switcher = document.getElementById("langSwitch");
+
+switcher.addEventListener("change", () => {
+
+const lang = switcher.checked ? "en" : "ru";
+
+document.querySelectorAll("[data-ru]").forEach(el => {
+
+el.textContent = el.getAttribute("data-" + lang);
+
+});
+
+});
+
+</script>
   <div class="lang-switch">
     <button onclick="setLang('ru')" class="lang-btn">RU</button>
     <button onclick="setLang('en')" class="lang-btn">EN</button>
