@@ -51,4 +51,20 @@ window.onload = () => {
 </script>
 
 </body>
+  <div class="lang-switch">
+    <button onclick="setLang('ru')" class="lang-btn">RU</button>
+    <button onclick="setLang('en')" class="lang-btn">EN</button>
+</div>
+
+<script>
+
+function setLang(lang){
+
+document.querySelectorAll("[data-ru]").forEach(el=>{
+el.textContent = el.getAttribute("data-"+lang)
+})
+
+}
+
+</script>
 </html>
