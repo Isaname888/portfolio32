@@ -1,24 +1,241 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
+
 <head>
 <meta charset="UTF-8">
-<title>Portfolio</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MUSIN ISA | Portfolio</title>
+
+<style>
+
+/* общий стиль */
+
+body{
+
+margin:0;
+
+font-family: Arial, sans-serif;
+
+background: linear-gradient(
+120deg,
+#0f172a,
+#020617,
+#0b1120
+);
+
+color:white;
+
+}
+
+/* контейнер */
+
+.container{
+
+max-width:1000px;
+
+margin:auto;
+
+padding:40px 20px;
+
+}
+
+/* имя */
+
+.name{
+
+font-size:52px;
+
+letter-spacing:4px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+}
+
+/* профессия */
+
+.hero-title{
+
+background: rgba(20,20,30,0.55);
+
+backdrop-filter: blur(8px);
+
+padding:12px 26px;
+
+border-radius:0;
+
+display:inline-block;
+
+letter-spacing:2px;
+
+font-weight:600;
+
+margin-bottom:40px;
+
+}
+
+/* about */
+
+.about-box{
+
+background: rgba(0,0,0,0.45);
+
+backdrop-filter: blur(6px);
+
+padding:35px;
+
+margin-top:40px;
+
+border-radius:0;
+
+line-height:1.7;
+
+}
+
+/* skills */
+
+.skills{
+
+margin-top:40px;
+
+}
+
+.skill{
+
+margin-bottom:20px;
+
+}
+
+.bar{
+
+height:8px;
+
+background:#1e293b;
+
+}
+
+.progress{
+
+height:8px;
+
+background:white;
+
+}
+
+/* footer */
+
+footer{
+
+margin-top:60px;
+
+opacity:0.6;
+
+font-size:14px;
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<div class="bg"></div>
+<div class="container">
 
-<div class="center">
-  <h1 class="neon">YOUR NAME</h1>
-  <p class="subtitle">веб-разработчик</p>
+<h1 class="name">MUSIN ISA</h1>
 
-  <div class="buttons">
-    <a href="about.html">Обо мне</a>
-    <a href="skills.html">Навыки</a>
-    <a href="contact.html">Контакты</a>
-  </div>
+<h2 class="hero-title">
+Full Stack Developer • Web Creator • Software Engineer • Game Developer
+</h2>
+
+
+<section class="about-box">
+
+<h2>ABOUT ME</h2>
+
+<p>
+Hello! My name is MUSIN ISA. I am a professional Full Stack Web Developer and Software Creator.
+I specialize in creating modern websites, web applications, and interactive digital products.
+I enjoy transforming ideas into real projects that look beautiful, work fast, and provide the best user experience.
+</p>
+
+<p>
+I work with HTML, CSS, JavaScript and modern technologies to build responsive and functional interfaces.
+I create websites, applications, and interactive systems that work smoothly on all devices.
+I pay attention to clean code structure, performance optimization, and modern design trends.
+</p>
+
+<p>
+I am also interested in game development, animations, UI/UX design, and interactive visual effects.
+I like combining creativity with programming to create unique and original projects.
+</p>
+
+<p>
+I constantly improve my skills, learn new technologies, and follow modern trends in development.
+My goal is to become a highly professional developer and create useful digital products for people.
+</p>
+
+<p>
+Skills:
+Web Development • Frontend • Backend • UI Design • UX Design • Animation • Responsive Design • Interactive Interfaces • Game Concepts • GitHub Projects
+</p>
+
+</section>
+
+
+<section class="skills">
+
+<h2>SKILLS</h2>
+
+<div class="skill">
+HTML
+<div class="bar">
+<div class="progress" style="width:90%"></div>
+</div>
+</div>
+
+<div class="skill">
+CSS
+<div class="bar">
+<div class="progress" style="width:85%"></div>
+</div>
+</div>
+
+<div class="skill">
+JavaScript
+<div class="bar">
+<div class="progress" style="width:80%"></div>
+</div>
+</div>
+
+<div class="skill">
+Web Design
+<div class="bar">
+<div class="progress" style="width:75%"></div>
+</div>
+</div>
+
+<div class="skill">
+Game Concepts
+<div class="bar">
+<div class="progress" style="width:70%"></div>
+</div>
+</div>
+
+</section>
+
+
+<footer>
+
+© 2026 MUSIN ISA | Portfolio
+
+</footer>
+
+
 </div>
 
 </body>
+
 </html>
